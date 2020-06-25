@@ -6,7 +6,7 @@ class model_class():
     def __init__(self):
         #Actual Model
         self.model = tf.keras.applications.VGG19(
-            include_top=False, weights='imagenet', input_tensor=None, input_shape=(300, 300, 3),
+            include_top=False, weights='imagenet', input_tensor=None, input_shape=(500, 500, 3),
             pooling='avg', classes=1000
             )
         #For Weights
