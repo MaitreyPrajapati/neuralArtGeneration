@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 
 def custom_model(vgg_model, vgg_weights):
-    content_layers = ['block5_conv2']
+    content_layers = ['block2_conv2']
 
     style_layers = ['block1_conv1',
                     'block2_conv1',
@@ -32,16 +32,15 @@ def custom_model(vgg_model, vgg_weights):
         else:
             output_layers.append(layer)
 
-
-
-
     output_model = tf.keras.layers.Input(shape= (500,500,3))
+    output_model.trainable = False
     input_layer = prev_layer = output_model
 
     for layer in output_layers[1:]:
 
         layer._inbound_nodes = []
         curr_layer = layer(prev_layer)
+        curr_layer.trainable = False
         prev_layer = curr_layer
 
         if (layer.get_config()['name'] in all_output_layers):
