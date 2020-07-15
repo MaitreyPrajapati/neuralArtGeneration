@@ -22,7 +22,7 @@ def get_class_model():
 
 # How to normalize it properly ???
 def load_image(image_path):
-    image = np.array(keras.preprocessing.image.load_img(image_path, target_size=(800,800)), dtype='float32').reshape(1,800,800,3) - MEANS
+    image = np.array(keras.preprocessing.image.load_img(image_path, target_size=(500, 500)), dtype='float32').reshape(1, 500, 500, 3) - MEANS
     return image
 
 
