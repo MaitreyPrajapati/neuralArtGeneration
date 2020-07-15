@@ -13,6 +13,16 @@ def content_loss(original_activation, generated_activation):
     loss = (1 / (4 * n_H * n_W * n_C)) * tf.reduce_sum(tf.square(tf.subtract(original_activation, generated_activation)))
     return loss
 
+def overall_content_loss(original_activations, generated_activations):
+    oC = 0
+
+    for index in range(len(original_activations)):
+
+        oC += content_loss(original_activations[index], generated_activations[index])
+
+    oC /= len(original_activations)
+
+    return oC
 
 def gram_matrix(activation):
 
@@ -22,7 +32,8 @@ def gram_matrix(activation):
 
 def layer_style_loss(original_activation, generated_activation):
 
-    m, n_H, n_W, n_C = original_activation.get_shape().as_list()
+    m, n_H, n_W, n_C = original_activation.get_shape().as_list() ## Only to be used when there are more than one layer defining the loss
+    # n_H, n_W, n_C = original_activation.get_shape().as_list()
 
     # Reshape the images to have them of shape (n_C, n_H*n_W)
     a_S = tf.transpose(tf.reshape(original_activation, shape=(-1, n_C)))
@@ -47,10 +58,10 @@ def overall_style_loss(layer_weights, original_activations, generated_activation
 
     return total_style_loss
 
-def total_loss(layer_weights, content_activations, style_activations, generated_activations, alpha=0.6, beta=0.4):
+def total_loss(layer_weights, content_activations, style_activations, generated_activations, alpha=0.01, beta=1):
 
-    c_loss = content_loss(content_activations[-1], generated_activations[-1])
-    s_loss = overall_style_loss(layer_weights, style_activations[:-1], generated_activations[:-1])
+    c_loss = overall_content_loss(content_activations[:2], generated_activations[:2])
+    s_loss = overall_style_loss(layer_weights, style_activations, generated_activations)
 
     t_loss = alpha * c_loss + beta * s_loss
 

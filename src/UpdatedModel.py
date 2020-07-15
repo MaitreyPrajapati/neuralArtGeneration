@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 
 def custom_model(vgg_model, vgg_weights):
-    content_layers = ['block2_conv2']
+    # content_layers = ['block5_conv2']
 
     style_layers = ['block1_conv1',
                     'block2_conv1',
@@ -11,7 +11,7 @@ def custom_model(vgg_model, vgg_weights):
                     'block5_conv1'
                     ]
 
-    all_output_layers = set(style_layers + content_layers)
+    all_output_layers = set(style_layers)
 
     #Final output endpoints
     model_output_layers = []
