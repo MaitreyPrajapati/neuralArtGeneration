@@ -4,7 +4,7 @@ import tensorflow as tf
 def content_loss(original_activation, generated_activation):
 
     # Activation shape = (1, 31, 31, 512)
-    m, n_H, n_W, n_C = original_activation.get_shape().as_list()
+    n_H, n_W, n_C = original_activation.get_shape().as_list()
 
     # Reshaping activations
     # a_C_unrolled = tf.reshape(original_activation, shape=(-1, n_C))
@@ -58,9 +58,9 @@ def overall_style_loss(layer_weights, original_activations, generated_activation
 
     return total_style_loss
 
-def total_loss(layer_weights, content_activations, style_activations, generated_activations, alpha=0.01, beta=1):
+def total_loss(layer_weights, content_activations, style_activations, generated_activations, alpha=0.6, beta=0.4):
 
-    c_loss = overall_content_loss(content_activations[:2], generated_activations[:2])
+    c_loss = overall_content_loss(content_activations[1], generated_activations[1])
     s_loss = overall_style_loss(layer_weights, style_activations, generated_activations)
 
     t_loss = alpha * c_loss + beta * s_loss

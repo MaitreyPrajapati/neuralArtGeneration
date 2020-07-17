@@ -11,7 +11,7 @@ def custom_model(vgg_model, vgg_weights):
                     'block5_conv1'
                     ]
 
-    all_output_layers = set(style_layers)
+    all_output_layers = style_layers
 
     #Final output endpoints
     model_output_layers = []

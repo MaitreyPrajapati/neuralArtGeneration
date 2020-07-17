@@ -11,7 +11,7 @@ from noisy_image import generate_noisy_image
 import time
 import os
 
-STYLE_WEIGHTS = [0.3, 0.2, 0.2, 0.1, 0.1]
+STYLE_WEIGHTS = [0.2] * 4
 SAVE_IMAGE_PATH = '../interm_images/'
 MEANS = np.array([123.68, 116.779, 103.939], dtype='float32').reshape((1,1,1,3))
 
