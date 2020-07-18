@@ -11,7 +11,7 @@ from noisy_image import generate_noisy_image
 import time
 import os
 
-STYLE_WEIGHTS = [0.2] * 4
+STYLE_WEIGHTS = [0.3] * 3
 SAVE_IMAGE_PATH = '../interm_images/'
 MEANS = np.array([123.68, 116.779, 103.939], dtype='float32').reshape((1,1,1,3))
 
@@ -22,7 +22,7 @@ def get_class_model():
 
 # How to normalize it properly ???
 def load_image(image_path):
-    image = np.array(keras.preprocessing.image.load_img(image_path, target_size=(500, 500)), dtype='float32').reshape(1, 500, 500, 3) - MEANS
+    image = np.array(keras.preprocessing.image.load_img(image_path, target_size=(800, 500)), dtype='float32').reshape(1, 800, 500, 3) - MEANS
     return image
 
 
@@ -81,7 +81,7 @@ def run_on_all():
 
     #Listing the style and content images
     style_images = os.listdir('style_image/')
-    content_images = os.listdir('content_image/')
+    content_images = os.listdir('content_image/vertical')
 
     #This had to be done because of hidden cache files in the folder are also listed in the list, we need only jpg files
     style_images = sorted([x for x in style_images if 'jpg' in x], reverse=True)
@@ -92,7 +92,7 @@ def run_on_all():
         for si in style_images:
 
             #Loading images
-            content_input = load_image('content_image/' + ci)
+            content_input = load_image('content_image/vertical/' + ci)
             style_input = load_image('style_image/' + si)
 
             #Generating random images

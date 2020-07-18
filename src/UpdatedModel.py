@@ -7,8 +7,6 @@ def custom_model(vgg_model, vgg_weights):
     style_layers = ['block1_conv1',
                     'block2_conv1',
                     'block3_conv1',
-                    'block4_conv1',
-                    'block5_conv1'
                     ]
 
     all_output_layers = style_layers
@@ -32,7 +30,7 @@ def custom_model(vgg_model, vgg_weights):
         else:
             output_layers.append(layer)
 
-    output_model = tf.keras.layers.Input(shape= (500,500,3))
+    output_model = tf.keras.layers.Input(shape= (800,500,3))
     output_model.trainable = False
     input_layer = prev_layer = output_model
 

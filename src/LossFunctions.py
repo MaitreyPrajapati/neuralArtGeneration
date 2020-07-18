@@ -58,9 +58,9 @@ def overall_style_loss(layer_weights, original_activations, generated_activation
 
     return total_style_loss
 
-def total_loss(layer_weights, content_activations, style_activations, generated_activations, alpha=0.6, beta=0.4):
+def total_loss(layer_weights, content_activations, style_activations, generated_activations, alpha=1, beta=1000):
 
-    c_loss = overall_content_loss(content_activations[1], generated_activations[1])
+    c_loss = overall_content_loss(content_activations[0], generated_activations[0])
     s_loss = overall_style_loss(layer_weights, style_activations, generated_activations)
 
     t_loss = alpha * c_loss + beta * s_loss
