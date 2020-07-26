@@ -1,5 +1,5 @@
 # Generating art using deep convolutional neural nets by uniformed random pixel optimisation
-![](https://github.com/MaitreyPrajapati/neuralArtGeneration/blob/master/absolutelyUnnecessary/working_on_it_hd.gif)
+![](https://github.com/MaitreyPrajapati/neuralArtGeneration/blob/master/absolutelyUnnecessary/Not%20Unnecesasry/Fin1.jpg)
 
 ### Input : Content image, Style image, Randomly pixelated image
 ### Output : A picture made in style of the style image with contents of the content image
