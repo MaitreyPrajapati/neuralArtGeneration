@@ -1,5 +1,5 @@
 # Generating art using deep convolutional neural nets by uniformed random pixel optimisation
-![](https://github.com/MaitreyPrajapati/neuralArtGeneration/blob/master/absolutelyUnnecessary/Not%20Unnecesasry/Fin1.jpg)
+![](https://github.com/MaitreyPrajapati/neuralArtGeneration/blob/master/absolutelyUnnecessary/Not%20Unnecesasry/main_img.jpg)
 
 ### Input : Content image, Style image, Randomly pixelated image
 ### Output : A picture made in style of the style image with contents of the content image
@@ -44,6 +44,6 @@ Neural style transfer is an optimization technique used to take three images, a 
     * Optimizing these hyperparameters can significantly reduce the time taken to generate the output image, these are to be tweaked according to the output required
    
 ### Outputs
-![](https://github.com/MaitreyPrajapati/neuralArtGeneration/blob/master/absolutelyUnnecessary/Not%20Unnecesasry/fin2.jpg)
+![](https://github.com/MaitreyPrajapati/neuralArtGeneration/blob/master/absolutelyUnnecessary/Not%20Unnecesasry/sub_img.jpg)
 
 
