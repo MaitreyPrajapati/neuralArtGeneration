@@ -44,3 +44,6 @@ Neural style transfer is an optimization technique used to take three images, a 
     * Optimizing these hyperparameters can significantly reduce the time taken to generate the output image, these are to be tweaked according to the output required
    
 ### Outputs
+![](https://github.com/MaitreyPrajapati/neuralArtGeneration/blob/master/absolutelyUnnecessary/Not%20Unnecesasry/fin2.jpg)
+
+
