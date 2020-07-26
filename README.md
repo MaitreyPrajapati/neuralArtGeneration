@@ -1,6 +1,6 @@
 # Generating art using deep convolutional neural nets by uniformed random pixel optimisation
 ![](https://github.com/MaitreyPrajapati/neuralArtGeneration/blob/master/absolutelyUnnecessary/Not%20Unnecesasry/main_img.jpg)
-*Colosseum in Rome and Irises by Vincent Van Gogh merged together*
+*Colosseum in Rome and Irises by Vincent Van Gogh, both so beautiful you just can't stop looking at them*
 
 ### Input : Content image, Style image, Randomly pixelated image
 ### Output : A picture made in style of the style image with contents of the content image
@@ -46,5 +46,6 @@ Neural style transfer is an optimization technique used to take three images, a 
    
 ### Outputs
 ![](https://github.com/MaitreyPrajapati/neuralArtGeneration/blob/master/absolutelyUnnecessary/Not%20Unnecesasry/sub_img.jpg)
-*Guernica by Pablo Picasso, Almond Blossoms by Vincent van Gogh, Starry Night Over the Rhône by Vincent van Gogh*
+*Guernica by Pablo Picasso, Almond Blossoms by Vincent van Gogh and Starry Night Over the Rhône by Vincent van Gogh*<br/>
+*Each more beautiful than the other*
 
